@@ -1,1 +1,1 @@
-web: gunicorn message_board.app:app
+web: gunicorn app.__init__:app
