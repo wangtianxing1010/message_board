@@ -1,10 +1,13 @@
 import click
+import os
 
 from app import app, db
 from app.models import Message
 from flask_migrate import Migrate, upgrade
 
-migrate = Migrate(app, db)
+MIGRATION_DIR = os.path.join('app', 'migrations')
+
+migrate = Migrate(app, db, directory=MIGRATION_DIR)
 
 
 @app.cli.command()
