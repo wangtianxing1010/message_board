@@ -2,6 +2,9 @@ import click
 
 from app import app, db
 from app.models import Message
+from flask_migrate import Migrate, upgrade
+
+migrate = Migrate(app, db)
 
 
 @app.cli.command()
@@ -39,5 +42,4 @@ def forge(count):
 @app.cli.command()
 def deploy():
     """Run development tasks"""
-    from flask_migrate import upgrade
     upgrade()
