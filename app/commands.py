@@ -35,6 +35,7 @@ def forge(count):
     db.session.commit()
     click.echo("created %d fake messages." % count)
 
+
 @app.cli.command()
 def deploy():
     """Run development tasks"""
