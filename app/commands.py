@@ -5,10 +5,10 @@ from app import app, db
 from app.models import Message
 from flask_migrate import Migrate, upgrade
 
-MIGRATION_DIR = os.path.join('app', 'migrations')
+# MIGRATION_DIR = os.path.join('app', 'migrations')
 
-migrate = Migrate(app, db, directory=MIGRATION_DIR)
-
+# migrate = Migrate(app, db, directory=MIGRATION_DIR)
+migrate = Migrate(app, db)
 
 @app.cli.command()
 @click.option("--drop", is_flag=True, help="create after drop.")
